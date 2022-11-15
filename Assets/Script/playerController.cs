@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class playerController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class playerController : MonoBehaviour
         _rigidbody.velocity = myDirection * moveSpeed * Time.deltaTime;
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         myDirection = new Vector3(input._direction.x, 0, input._direction.y);
         Move(myDirection);
